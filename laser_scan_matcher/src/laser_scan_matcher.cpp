@@ -674,7 +674,7 @@ void LaserScanMatcher::PointCloudToLDP(const PointCloudT::ConstPtr& cloud,
   for (unsigned int i = 0; i < n; i++)
   {
     // calculate position in laser frame
-    if (is_nan(cloud_f.points[i].x) || is_nan(cloud_f.points[i].y))
+    if (isnan(cloud_f.points[i].x) || isnan(cloud_f.points[i].y))
     {
       ROS_WARN("Laser Scan Matcher: Cloud input contains NaN values. \
                 Please use a filtered cloud input.");
