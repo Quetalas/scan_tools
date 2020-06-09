@@ -31,16 +31,15 @@
 
 typedef scan_tools::LaserScanSparsifierNodelet LaserScanSparsifierNodelet;
 
-PLUGINLIB_DECLARE_CLASS (laser_scan_sparsifier, LaserScanSparsifierNodelet, 
-  LaserScanSparsifierNodelet, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS (LaserScanSparsifierNodelet, nodelet::Nodelet);
 
 void LaserScanSparsifierNodelet::onInit ()
 {
   NODELET_INFO("Initializing LaserScanSparsifier Nodelet");
-  
+
   // TODO: Do we want the single threaded or multithreaded NH?
   ros::NodeHandle nh         = getMTNodeHandle();
   ros::NodeHandle nh_private = getMTPrivateNodeHandle();
 
-  laser_scan_sparsifier_ = new LaserScanSparsifier(nh, nh_private);  
+  laser_scan_sparsifier_ = new LaserScanSparsifier(nh, nh_private);
 }

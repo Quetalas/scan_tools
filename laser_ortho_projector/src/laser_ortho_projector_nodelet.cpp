@@ -31,13 +31,12 @@
 
 typedef scan_tools::LaserOrthoProjectorNodelet LaserOrthoProjectorNodelet;
 
-PLUGINLIB_DECLARE_CLASS (laser_ortho_projector, LaserOrthoProjectorNodelet,
-  LaserOrthoProjectorNodelet, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS (LaserOrthoProjectorNodelet, nodelet::Nodelet);
 
 void LaserOrthoProjectorNodelet::onInit ()
 {
   NODELET_INFO("Initializing LaserOrthoProjector Nodelet");
-  
+
   // TODO: Do we want the single threaded or multithreaded NH?
   ros::NodeHandle nh         = getMTNodeHandle();
   ros::NodeHandle nh_private = getMTPrivateNodeHandle();

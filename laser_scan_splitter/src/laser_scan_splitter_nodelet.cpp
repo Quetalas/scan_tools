@@ -31,16 +31,15 @@
 
 typedef scan_tools::LaserScanSplitterNodelet LaserScanSplitterNodelet;
 
-PLUGINLIB_DECLARE_CLASS (laser_scan_splitter, LaserScanSplitterNodelet, 
-  LaserScanSplitterNodelet, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS (LaserScanSplitterNodelet, nodelet::Nodelet);
 
 void LaserScanSplitterNodelet::onInit ()
 {
   NODELET_INFO("Initializing LaserScanSplitter Nodelet");
-  
+
   // TODO: Do we want the single threaded or multithreaded NH?
   ros::NodeHandle nh         = getMTNodeHandle();
   ros::NodeHandle nh_private = getMTPrivateNodeHandle();
 
-  laser_scan_splitter_ = new LaserScanSplitter(nh, nh_private);  
+  laser_scan_splitter_ = new LaserScanSplitter(nh, nh_private);
 }
